@@ -1,0 +1,13 @@
+version: '3'
+services:
+  go:
+    container_name: go
+    build:
+      context: go
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./go/src:/go/src:cached
+    tty: true
+    stdin_open: true

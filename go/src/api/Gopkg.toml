@@ -1,0 +1,59 @@
+# Gopkg.toml example
+#
+# Refer to https://golang.github.io/dep/docs/Gopkg.toml.html
+# for detailed Gopkg.toml documentation.
+#
+# required = ["github.com/user/thing/cmd/thing"]
+# ignored = ["github.com/user/project/pkgX", "bitbucket.org/user/project/pkgA/pkgY"]
+#
+# [[constraint]]
+#   name = "github.com/user/project"
+#   version = "1.0.0"
+#
+# [[constraint]]
+#   name = "github.com/user/project2"
+#   branch = "dev"
+#   source = "github.com/myfork/project2"
+#
+# [[override]]
+#   name = "github.com/x/y"
+#   version = "2.4.0"
+#
+# [prune]
+#   non-go = false
+#   go-tests = true
+#   unused-packages = true
+
+required = [
+    "github.com/goadesign/goa/goagen",
+    "github.com/goadesign/goa/goagen/gen_app",
+    "github.com/goadesign/goa/goagen/gen_main",
+    "github.com/goadesign/goa/goagen/gen_client",
+    "github.com/goadesign/goa/goagen/gen_controller",
+    "github.com/goadesign/goa/goagen/gen_js",
+    "github.com/goadesign/goa/goagen/gen_schema",
+    "github.com/goadesign/goa/goagen/gen_swagger",
+    "github.com/goadesign/goa/goagen/meta",
+    "github.com/goadesign/goa/goagen/utils",
+    "github.com/goadesign/goa/client",
+    "github.com/goadesign/goa/cors",
+    "github.com/goadesign/goa/design",
+    "github.com/goadesign/goa/design/apidsl",
+    "github.com/goadesign/goa/dslengine",
+    "github.com/goadesign/goa/encoding",
+    "github.com/goadesign/goa/goatest",
+    "github.com/goadesign/goa/logging",
+    "github.com/goadesign/goa/middleware",
+    "github.com/goadesign/goa/uuid",
+    "github.com/goadesign/goa/version",
+    "github.com/goadesign/goa"
+]
+
+# https://asahima.hatenablog.jp/entry/2018/04/01/220000
+[[override]]
+  name = "github.com/satori/go.uuid"
+  revision = "master"
+
+[prune]
+  go-tests = true
+  unused-packages = true
