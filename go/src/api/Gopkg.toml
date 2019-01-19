@@ -25,6 +25,9 @@
 #   unused-packages = true
 
 required = [
+    "gopkg.in/godo.v2",
+    "gopkg.in/godo.v2/cmd/godo",
+    "golang.org/x/lint/golint",
     "github.com/goadesign/goa/goagen",
     "github.com/goadesign/goa/goagen/gen_app",
     "github.com/goadesign/goa/goagen/gen_main",

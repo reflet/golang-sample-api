@@ -15,7 +15,9 @@ RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 RUN dep ensure -v -vendor-only=true
 
 # install development tools.
-RUN go install api/vendor/github.com/goadesign/goa/goagen
+RUN go install api/vendor/github.com/goadesign/goa/goagen && \
+    go install api/vendor/golang.org/x/lint/golint/ && \
+    go install api/vendor/gopkg.in/godo.v2/cmd/godo
 
 # build
 RUN go build -o server

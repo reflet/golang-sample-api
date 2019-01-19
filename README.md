@@ -20,7 +20,7 @@ $ mkdir -p ~/workspace/golang-sample-api/
 $ cd ~/workspace/golang-sample-api/
 
 # コード配置
-$ git clone git@github.com:reflet/reflet-golang-sample-api.git .
+$ git clone git@github.com:reflet/golang-sample-api.git .
 
 # dockerイメージを構築する
 $ docker-compose build

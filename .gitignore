@@ -10,6 +10,7 @@ vendor
 *.dll
 *.so
 *.dylib
+godobin*
 
 # Test binary, built with `go test -c`
 *.test
