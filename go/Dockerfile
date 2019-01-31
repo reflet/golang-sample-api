@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get install -y vim less
 
 # copy application code from host.
-ADD src /go/src
+ADD src /go/src/api
 WORKDIR /go/src/api
 
 # install package management tool (dep).
@@ -26,7 +26,8 @@ RUN go install api/vendor/github.com/goadesign/goa/goagen && \
     go install api/vendor/gopkg.in/godo.v2/cmd/godo
 
 # build
-RUN go build -o server
+RUN go build -o vender/server
 
 EXPOSE 8080
-CMD ["./server"]
+# CMD ["./vender/server"]
+CMD ["godo", "server", "--watch"]

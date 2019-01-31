@@ -8,11 +8,9 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./src:/go/src:cached
+      - ./src:/go/src/api:cached
       # exclude volumes
       - /go/src/api/vendor
       - /go/src/api/swagger
-    command:
-      godo server --watch
     tty: true
     stdin_open: true

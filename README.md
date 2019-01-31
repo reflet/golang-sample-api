@@ -25,14 +25,11 @@ $ git clone git@github.com:reflet/golang-sample-api.git .
 # dockerイメージを構築する
 $ docker-compose build
 
-# goパッケージをインストールする
-$ docker-compose run go dep ensure -v -vendor-only=true
-
-# アプリケーション構築
-$ docker-compose run go go build -o server
-
 # コンテナを起動する
 $ docker-compose up -d
+
+# サーバのログ確認 (最新10件を継続して監視 - ctrl + c で確認終了)
+$ docker-compose logs -f --tail 10 go
 ```
 
 ブラウザを起動して動作確認する
@@ -51,6 +48,12 @@ $ docker-compose ps
 
 # サーバのログ確認 (最新10件を継続して監視 - ctrl + c で確認終了)
 $ docker-compose logs -f --tail 10 go 
+
+# パッケージのインストール (dep)
+$ docker-compose run go dep ensure -v -vendor-only=true
+
+# アプリケーションのビルド(任意)
+$ docker-compose run go go build -o server
 
 # サーバ停止
 $ docker-compose stop
